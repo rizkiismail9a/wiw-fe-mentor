@@ -21,8 +21,8 @@ const regionOptions = ref<{ label: string; value: string }[]>([
     value: 'Asia',
   },
   {
-    label: 'Europa',
-    value: 'Europa',
+    label: 'Europe',
+    value: 'Europe',
   },
   {
     label: 'Oceania',
