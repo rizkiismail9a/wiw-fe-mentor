@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HomePage from "@/components/modules/HomePage.vue";
+</script>
 <template>
-  <div>Ini laman home</div>
+  <HomePage />
 </template>
