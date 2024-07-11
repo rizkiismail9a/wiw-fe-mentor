@@ -92,7 +92,6 @@ watch(route, async (value) => {
   >
     <router-link
       to="/"
-      aria-label="back button"
       class="flex items-center gap-2 bg-light-mode-elements shadow-lg w-[100px] px-5 py-1 text-sm cursor-pointer dark:bg-dark-mode-elements dark:text-dark-mode-text"
     >
       <ion-icon name="arrow-back-outline" />
@@ -100,7 +99,6 @@ watch(route, async (value) => {
     </router-link>
 
     <div
-      aria-label="detail info"
       class="flex flex-col sm:flex-row gap-10 sm:justify-between sm:items-center p-0 w-full max-w-[1440px]"
     >
       <!-- images -->
@@ -113,16 +111,12 @@ watch(route, async (value) => {
         />
       </div>
 
-      <div
-        aria-label="country info"
-        class="dark:text-dark-mode-text flex flex-col gap-5"
-      >
-        <div class="font-bold text-lg sm:text-4xl" aria-label="country name">
+      <div class="dark:text-dark-mode-text flex flex-col gap-5">
+        <div class="font-bold text-lg sm:text-4xl">
           {{ country?.name.official }}
         </div>
 
         <div
-          aria-label="country general info"
           class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-16 tracking-[0.24px]"
         >
           <!-- First Section -->
@@ -179,7 +173,6 @@ watch(route, async (value) => {
               v-for="border in borders"
               :key="border.name.common"
               :to="`/${border.name.official}`"
-              aria-label="back button"
               class="bg-light-mode-elements shadow-lg p-1 text-center text-sm cursor-pointer rounded-sm dark:bg-dark-mode-elements dark:text-dark-mode-text"
             >
               <span>{{ border.name.common ?? '-' }}</span>

@@ -9,15 +9,14 @@ defineProps<{
   <div
     class="bg-white w-[230px] h-[320px] rounded-md overflow-hidden shadow-md cursor-pointer dark:bg-dark-mode-elements"
   >
-    <div class="w-full" aria-label="contry-flag">
+    <div class="w-full">
       <img :src="country.flags.png" :alt="country.flags.alt" />
     </div>
     <div class="p-3 flex flex-col gap-3">
-      <div aria-label="contry-name" class="font-bold dark:text-dark-mode-text">
+      <div class="font-bold dark:text-dark-mode-text">
         {{ country.name.official }}
       </div>
       <div
-        aria-label="country-data"
         class="flex flex-col gap-2 items-start text-xs dark:text-dark-mode-text"
       >
         <div data-section="population" class="flex gap-1">
