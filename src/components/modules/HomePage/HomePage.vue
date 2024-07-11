@@ -6,6 +6,9 @@ import { Countries } from '@/types/countries.types';
 import { onMounted, ref } from 'vue';
 import { AxiosError } from 'axios';
 import DropDown from './DropDown/DropDown.vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 onMounted(async () => {
   await getAllCountries();
@@ -66,6 +69,11 @@ const findCountriesByRegion = async (event: string): Promise<void> => {
     }
   }
 };
+
+// Go to detail page
+const goToDetail = (name: string): void => {
+  router.push(`/${name}`);
+};
 </script>
 <template>
   <div class="p-6">
@@ -80,6 +88,7 @@ const findCountriesByRegion = async (event: string): Promise<void> => {
         v-for="country in countries"
         :key="country.area"
         class="w-fit m-auto"
+        @click="goToDetail(country.name.official)"
       >
         <CountryCard :country="country" />
       </div>

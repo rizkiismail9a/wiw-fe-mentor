@@ -26,9 +26,12 @@ const CountriesServices = {
   },
   findCountriesByRegion: (
     region: string,
-    params: FilterParameters,
+    params?: FilterParameters,
   ): Promise<AxiosResponse> => {
     return API({ params }).get(`/region/${region}`);
+  },
+  findCountryByCode: (params?: FilterParameters): Promise<AxiosResponse> => {
+    return API({ params }).get('/alpha');
   },
 };
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useDark, useToggle } from "@vueuse/core";
+import { useDark, useToggle } from '@vueuse/core';
 
 const isDark = useDark();
 const darkToggle = useToggle(isDark);
@@ -7,7 +7,7 @@ const darkToggle = useToggle(isDark);
 <template>
   <nav
     id="navbar"
-    class="bg-light-mode-bg dark:bg-dark-mode-elements shadow-lg p-4 flex justify-between h-[80px] items-center"
+    class="bg-light-mode-bg dark:bg-dark-mode-elements shadow p-4 flex justify-between h-[80px] items-center"
   >
     <h1 class="font-extrabold dark:text-dark-mode-text text-light-mode-text">
       What in the world?
