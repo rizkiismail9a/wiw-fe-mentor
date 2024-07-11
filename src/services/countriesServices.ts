@@ -1,11 +1,11 @@
-import { FilterParameters } from "@/types/filter.types";
-import axios, { AxiosInstance, AxiosResponse } from "axios";
+import { FilterParameters } from '@/types/filter.types';
+import axios, { AxiosInstance, AxiosResponse } from 'axios';
 
 const API = ({ params = {}, headers = {} } = {}): AxiosInstance => {
   const instance = axios.create({
     baseURL: import.meta.env.VITE_COUNTRIES_API,
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       ...headers,
     },
     params,
@@ -16,7 +16,19 @@ const API = ({ params = {}, headers = {} } = {}): AxiosInstance => {
 
 const CountriesServices = {
   getAllCountries: (params: FilterParameters): Promise<AxiosResponse> => {
-    return API({ params }).get("/all");
+    return API({ params }).get('/all');
+  },
+  findCountriesByName: (
+    name: string,
+    params?: FilterParameters,
+  ): Promise<AxiosResponse> => {
+    return API({ params }).get(`/name/${name}`);
+  },
+  findCountriesByRegion: (
+    region: string,
+    params: FilterParameters,
+  ): Promise<AxiosResponse> => {
+    return API({ params }).get(`/region/${region}`);
   },
 };
 
