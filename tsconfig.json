@@ -20,6 +20,6 @@
     },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
-  "include": ["**/*.d.ts", "**/*.ts", "src/**/*.tsx"],
+  "include": ["**/*.d.ts", "**/*.ts", "src/**/*.vue"],
   "exclude": ["node_modules"]
 }
